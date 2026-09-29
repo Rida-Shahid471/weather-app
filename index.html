@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkyCast Weather</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="weather-app">
+
+        <!-- Decorative background -->
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+
+        <header>
+            <div class="logo">
+                <span class="logo-icon">☁️</span>
+                <div>
+                    <h1>SkyCast</h1>
+                    <p>Weather, beautifully simple.</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Search -->
+            <section class="search-section">
+                <div class="search-box">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="locationInput"
+                        placeholder="Search city or location..."
+                        autocomplete="off"
+                    >
+
+                    <button id="searchBtn">Search</button>
+                </div>
+
+                <p class="search-hint">
+                    Try: London, Karachi, New York, Tokyo...
+                </p>
+            </section>
+
+            <!-- Error -->
+            <div id="errorMessage" class="error-message">
+                <span>⚠️</span>
+                <p id="errorText">Location not found.</p>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Getting weather...</p>
+            </div>
+
+            <!-- Weather -->
+            <section id="weatherContent" class="weather-content">
+
+                <!-- Main Weather Card -->
+                <div class="main-card">
+
+                    <div class="location-info">
+                        <div>
+                            <p class="small-label">CURRENT WEATHER</p>
+
+                            <h2 id="cityName">London</h2>
+
+                            <p id="dateTime">Loading date...</p>
+                        </div>
+
+                        <div class="location-pin">📍</div>
+                    </div>
+
+                    <div class="temperature-area">
+
+                        <div class="weather-icon">
+                            <img id="weatherIcon" src="" alt="Weather">
+                        </div>
+
+                        <div class="temperature">
+                            <span id="temperature">--</span>
+                            <sup>°C</sup>
+                        </div>
+
+                        <div class="condition">
+                            <h3 id="condition">--</h3>
+                            <p>
+                                Feels like
+                                <strong id="feelsLike">--°C</strong>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="weather-summary">
+                        <p id="weatherSummary">
+                            Weather information will appear here.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Details -->
+                <div class="details-grid">
+
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div>
+                            <span>Humidity</span>
+                            <strong id="humidity">--%</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">💨</div>
+                        <div>
+                            <span>Wind Speed</span>
+                            <strong id="wind">-- km/h</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">🌡️</div>
+                        <div>
+                            <span>Pressure</span>
+                            <strong id="pressure">-- mb</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">👁️</div>
+                        <div>
+                            <span>Visibility</span>
+                            <strong id="visibility">-- km</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">☀️</div>
+                        <div>
+                            <span>UV Index</span>
+                            <strong id="uv">--</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">☁️</div>
+                        <div>
+                            <span>Cloud Cover</span>
+                            <strong id="cloud">--%</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Last Updated -->
+                <div class="updated">
+                    <span>●</span>
+                    Updated <span id="lastUpdated">--</span>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>SkyCast • Powered by WeatherAPI</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
